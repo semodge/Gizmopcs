@@ -1,0 +1,87 @@
+/* Pcmove.css */
+
+/* Animation for hopping */
+@keyframes hop {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px); /* Height of the hop */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hop {
+    animation: hop 0.5s ease-in-out; /* Add hopping animation */
+}
+
+/* Animation for moving around */
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(50px); /* Move right */
+    }
+    50% {
+        transform: translateX(0); /* Move back to start */
+    }
+    75% {
+        transform: translateX(-50px); /* Move left */
+    }
+    100% {
+        transform: translateX(0); /* Move back to start */
+    }
+}
+
+/* Class for hopping */
+.hop {
+    animation: hop 0.5s forwards; /* Duration of hop */
+}
+
+/* Class for moving */
+.move {
+    animation: move 2s infinite; /* Infinite move */
+}
+
+/* Additional styles for pc-icon to ensure it appears correctly */
+.pc-icon {
+    transition: transform 0.5s; /* Smooth transition for movement */
+}
+
+/* Pcmove.css */
+
+/* Keyframes for launching */
+@keyframes launch {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px); /* Adjust height of the launch */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+/* Keyframes for bouncing */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Bounce height */
+    }
+}
+
+/* Style for the PC icon when launching */
+.launch {
+    animation: launch 0.5s forwards; /* Launching effect */
+}
+
+/* Style for the PC icon when bouncing */
+.bounce {
+    animation: bounce 0.3s forwards; /* Bouncing effect */
+}

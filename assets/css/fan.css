@@ -1,0 +1,218 @@
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep it behind other content */
+}
+
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Loading screen styling */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Adds a blur effect to the background */
+}
+
+/* Fan container */
+.fan-container {
+    position: relative;
+    width: 200px; /* Increased width */
+    height: 200px; /* Increased height */
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+/* Fan blades */
+.fan-blade {
+    position: absolute;
+    width: 50%;
+    height: 15%;
+    background: linear-gradient(to right, #1e90ff, #00bfff); /* Gradient color for blades */
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.6); /* Glowing effect */
+}
+
+/* Positioning each blade */
+.blade1 { transform: rotate(0deg) translate(-50%, -50%); }
+.blade2 { transform: rotate(90deg) translate(-50%, -50%); }
+.blade3 { transform: rotate(180deg) translate(-50%, -50%); }
+.blade4 { transform: rotate(270deg) translate(-50%, -50%); }
+
+/* Fan center */
+.fan-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    height: 20%;
+    background: radial-gradient(circle, #444, #333); /* Radial gradient for center */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8); /* Glowing effect */
+}
+
+/* Fan animation */
+.fan-container {
+    animation: spinFan 2s linear infinite;
+}
+
+/* Keyframes for the fan spinning */
+@keyframes spinFan {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Main content (hidden initially) */
+#header, #Main, #footer {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Fade in content */
+.show-content #header,
+.show-content #Main,
+.show-content #footer {
+    opacity: 1;
+}
+
+/* Loading bar styling */
+.loading-bar {
+    position: absolute;
+    bottom: 20px; /* Position it near the bottom */
+    left: 50%; /* Center it horizontally */
+    width: 80%; /* Full width of the loading bar */
+    height: 10px; /* Height of the loading bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    border-radius: 5px; /* Rounded edges */
+    transform: translateX(-50%); /* Center it */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Loading progress indicator */
+.loading-progress {
+    position: absolute;
+    width: 0; /* Start with no width */
+    height: 100%; /* Full height of the loading bar */
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff); /* RGB gradient */
+    background-size: 300% 100%; /* Allow for animation */
+    border-radius: 5px; /* Rounded edges */
+    animation: loading 2s linear infinite; /* Animation */
+}
+
+/* Keyframes for loading progress */
+@keyframes loading {
+    0% {
+        width: 0%; /* Start from 0% */
+        background-position: 0% 0; /* Start gradient at the beginning */
+    }
+    50% {
+        background-position: 100% 0; /* Move gradient halfway */
+    }
+    100% {
+        width: 100%; /* Fill to 100% */
+        background-position: 0% 0; /* Reset gradient */
+    }
+}
+
+/* Loading message styling */
+.loading-message {
+    position: absolute;
+    top: 65%; /* Position it up slightly */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    opacity: 0; /* Start with hidden opacity */
+    animation: fadeIn 1s forwards, rgbGlow 3s linear infinite; /* Fade in effect and RGB glow */
+    animation-delay: 0.5s; /* Show after 0.5 seconds */
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start hidden */
+    }
+    to {
+        opacity: 1; /* Fade to visible */
+    }
+}
+
+/* RGB glow effect */
+@keyframes rgbGlow {
+    0% {
+        text-shadow: 
+            0 0 15px rgba(255, 0, 0, 1),  /* Red glow */
+            0 0 30px rgba(255, 0, 0, 0.8), 
+            0 0 45px rgba(255, 0, 0, 0.6);
+    }
+    33% {
+        text-shadow: 
+            0 0 15px rgba(0, 255, 0, 1),  /* Green glow */
+            0 0 30px rgba(0, 255, 0, 0.8), 
+            0 0 45px rgba(0, 255, 0, 0.6);
+    }
+    66% {
+        text-shadow: 
+            0 0 15px rgba(0, 0, 255, 1),  /* Blue glow */
+            0 0 30px rgba(0, 0, 255, 0.8), 
+            0 0 45px rgba(0, 0, 255, 0.6);
+    }
+    100% {
+        text-shadow: 
+            0 0 15px rgba(255, 0, 0, 1),  /* Back to Red glow */
+            0 0 30px rgba(255, 0, 0, 0.8), 
+            0 0 45px rgba(255, 0, 0, 0.6);
+    }
+}
+
+/* Fire rain styling */
+#fire-rain {
+    position: absolute;
+    top: -20%; /* Start from above the screen */
+    left: 0;
+    width: 100%;
+    height: 120%; /* Extend beyond the bottom */
+    pointer-events: none; /* Allow clicks to go through */
+    overflow: hidden;
+}
+
+.fire-drop {
+    position: absolute;
+    width: 3px; /* Width of each drop */
+    height: 15px; /* Height of each drop */
+    background: linear-gradient(to bottom, rgba(255, 165, 0, 0.8), rgba(255, 0, 0, 0.8)); /* Fire color */
+    opacity: 0.8;
+    animation: fall linear infinite; /* Animation for falling */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0); /* Start position */
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh); /* End position */
+        opacity: 0; /* Fade out */
+    }
+}

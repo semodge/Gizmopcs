@@ -1,0 +1,260 @@
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Use the same font as the fan */
+}
+
+/* Body styling */
+body {
+    background-color: #0d0d0d; /* Dark background for contrast */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Header styling */
+#header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Navigation styling */
+nav {
+    background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Center it */
+    width: fit-content; /* Adjust width to content */
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Horizontal layout */
+}
+
+nav li {
+    margin: 0 15px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline */
+    color: #1e90ff; /* Link color */
+    font-weight: 700; /* Bold text */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+nav a:hover {
+    color: #00bfff; /* Change color on hover */
+}
+
+/* Main content styling */
+#Main {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Builds heading styling */
+#Main h2 {
+    font-size: 28px; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Build card styling */
+.build-card {
+    border: 1px solid #e0e0e0; /* Light border for cards */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* Slightly darker card background */
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+}
+
+.build-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.build-title {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333; /* Dark text for titles */
+}
+
+.build-specs, .build-price {
+    margin: 5px 0;
+    color: #666; /* Grey text for details */
+}
+
+/* Footer styling */
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    position: relative; /* Adjusted to not overlap */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Builds section styling */
+.builds-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    justify-content: center; /* Center the cards */
+    margin-top: 20px; /* Space above the build cards */
+}
+
+.build-card {
+    background-color: #1e1e1e; /* Card background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 10px; /* Space between cards */
+    padding: 15px; /* Space inside the card */
+    text-align: center; /* Center the text */
+    width: 300px; /* Fixed width for each card */
+    color: #ffffff; /* Text color */
+}
+
+.build-image {
+    max-width: 100%; /* Responsive image */
+    border-radius: 10px; /* Rounded edges for images */
+}
+
+/* Glowing title style */
+.build-title {
+    font-size: 20px; /* Title size */
+    margin: 10px 0; /* Space above and below title */
+    color: #00f; /* Text color */
+    text-shadow: 
+        0 0 5px rgba(0, 0, 255, 0.8), /* Blue glow */
+        0 0 10px rgba(0, 0, 255, 0.6), /* Blue glow */
+        0 0 15px rgba(0, 0, 255, 0.4); /* Blue glow */
+}
+
+.build-specs,
+.build-price {
+    font-size: 14px; /* Specs and price size */
+    margin: 5px 0; /* Space above and below */
+}
+
+#header-logo {
+    max-width: 150px; /* Adjust the size of the logo */
+    height: auto; /* Keep aspect ratio */
+    margin-bottom: 10px; /* Space below the logo */
+}
+.pc-icon {
+    position: fixed; /* Fix position relative to the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    width: 60px; /* Width of the PC case */
+    height: 100px; /* Height of the PC case */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* Style for the PC case */
+.pc-case {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: #007BFF; /* Blue color for the case */
+    border: 2px solid #0056b3; /* Darker blue border */
+    border-radius: 5px; /* Rounded corners */
+    position: relative; /* Position relative for inner elements */
+}
+
+/* Style for the side of the PC */
+.pc-side {
+    width: 100%; /* Full width */
+    height: 80%; /* Height of the side */
+    background-color: #3399FF; /* Light blue color for the side */
+    border-radius: 5px; /* Rounded corners */
+    position: absolute; /* Position absolute */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+
+/* Style for the front of the PC */
+.pc-front {
+    width: 90%; /* Slightly smaller than the case */
+    height: 30%; /* Height of the front */
+    background-color: #00A0E0; /* Light blue front panel */
+    border-radius: 5px; /* Rounded corners */
+    position: absolute; /* Position absolute */
+    top: 10%; /* Align to the top with some space */
+    left: 5%; /* Center it */
+}
+
+/* Style for the top of the PC */
+.pc-top {
+    width: 100%; /* Full width */
+    height: 10%; /* Height of the top */
+    background-color: #00A0E0; /* Light blue top panel */
+    position: absolute; /* Position absolute */
+    top: -5%; /* Align to the top */
+    left: 0; /* Align to the left */
+    border-top-left-radius: 5px; /* Rounded corners */
+    border-top-right-radius: 5px; /* Rounded corners */
+}
+
+/* Style for the bottom of the PC */
+.pc-bottom {
+    width: 100%; /* Full width */
+    height: 10%; /* Height of the bottom */
+    background-color: #3399FF; /* Light blue for the bottom */
+    position: absolute; /* Position absolute */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    border-bottom-left-radius: 5px; /* Rounded corners */
+    border-bottom-right-radius: 5px; /* Rounded corners */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-3px);
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px); /* Jump height increased to 50 pixels */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* New styles for the message */
+.message {
+    position: fixed; /* Fixed position */
+    bottom: 130px; /* Above the PC icon */
+    left: 20px; /* Align with the PC */
+    background-color: rgba(0, 123, 255, 0.8); /* Blue background with transparency */
+    color: white; /* Text color */
+    padding: 5px 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    display: none; /* Hidden by default */
+}
+

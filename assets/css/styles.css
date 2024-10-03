@@ -1,0 +1,168 @@
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Use the same font as the fan */
+}
+
+/* Body styling */
+body {
+    background-color: #0d0d0d; /* Dark background for contrast */
+    color: #e0e0e0; /* Light text color */
+    overflow: hidden; /* Prevent scrolling during loading */
+}
+
+/* Header styling */
+#header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Main content styling */
+#Main {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Button styling */
+#cta-button {
+    background-color: #1e90ff; /* Bright button color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.6); /* Glowing effect */
+    transition: background-color 0.3s, transform 0.3s; /* Animation for hover effect */
+}
+
+/* Button hover effect */
+#cta-button:hover {
+    background-color: #00bfff; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Footer styling */
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+    #Main h2 {
+        font-size: 24px; /* Smaller font for mobile */
+    }
+    
+    #cta-button {
+        width: 90%; /* Full width button on mobile */
+        font-size: 14px;
+    }
+}
+
+
+@keyframes shoot {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px) translateX(-200px);
+        opacity: 0;
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    width: 2px; /* Adjust for thickness */
+    height: 20px; /* Adjust for length */
+    background: linear-gradient(to right, #ffffff, #00bfff); /* Color gradient */
+    border-radius: 10px; /* Rounded edges */
+    opacity: 0.8;
+    animation: shoot 1s ease-in forwards; /* Animation for shooting effect */
+}
+nav {
+    background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Center it */
+    width: fit-content; /* Adjust width to content */
+}
+
+nav ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Horizontal layout */
+}
+
+nav li {
+    margin: 0 15px; /* Space between links */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline */
+    color: #1e90ff; /* Link color */
+    font-weight: 700; /* Bold text */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+nav a:hover {
+    color: #00bfff; /* Change color on hover */
+}
+/* About Us heading styling */
+#Main h2 {
+    font-size: 28px; /* Larger font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* About Us paragraph styling */
+#Main p {
+    font-size: 16px; /* Adjusted font size for readability */
+    line-height: 1.5; /* Space between lines for better readability */
+    max-width: 600px; /* Limit width for better text layout */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+/* Header styling */
+#header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Logo styling */
+#logo {
+    max-width: 150px; /* Adjust as needed */
+    margin-bottom: 10px; /* Space between logo and title */
+}
+
+/* Logo particles container */
+#logo {
+    position: relative; /* Ensure particles are positioned correctly */
+    display: inline-block;
+}
+
+/* Logo image */
+#logo-img {
+    max-width: 150px; /* Adjust size as needed */
+    z-index: 1; /* Make sure it appears above the particles */
+}
+
+span {
+    position: absolute;
+    pointer-events: none; /* Prevent interaction with the letters */
+}
